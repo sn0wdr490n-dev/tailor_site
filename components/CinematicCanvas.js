@@ -7,8 +7,9 @@ const INITIAL_LOAD = 15
 const PRELOAD_AHEAD = 8
 
 function getFrameUrl(i) {
-  const base = process.env.NEXT_PUBLIC_BASE_PATH || ''
-  return `${base}/frames/ezgif-frame-${String(i).padStart(3, '0')}.jpg`
+  const isGitHubPages = typeof window !== 'undefined' && window.location.hostname.includes('github.io')
+  const basePath = isGitHubPages ? '/tailor_site' : ''
+  return `${basePath}/frames/ezgif-frame-${String(i).padStart(3, '0')}.jpg`
 }
 
 export default function CinematicCanvas({ scrollProgress }) {
