@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  basePath: '/tailor_site',
   images: {
     unoptimized: true,
     domains: [],
