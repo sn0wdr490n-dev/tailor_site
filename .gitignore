@@ -1,13 +1,21 @@
 # dependencies
-node_modules/
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
 
 # next.js
-.next/
-out/
+/.next/
+/out/
 
 # production
-build/
-dist/
+/build
+
+# misc
+.DS_Store
+*.pem
 
 # debug
 npm-debug.log*
@@ -25,10 +33,14 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# OS
-.DS_Store
-Thumbs.db
-
 # IDE
 .vscode/
 .idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+
+# SWC cache
+.swc
