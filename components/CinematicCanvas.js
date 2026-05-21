@@ -2,14 +2,12 @@
 
 import { useRef, useEffect, useState, useCallback } from 'react'
 
-const TOTAL_FRAMES = 123
+const TOTAL_FRAMES = 130
 const INITIAL_LOAD = 15
 const PRELOAD_AHEAD = 8
 
 function getFrameUrl(i) {
-  const isGitHubPages = typeof window !== 'undefined' && window.location.hostname.includes('github.io')
-  const basePath = isGitHubPages ? '/tailor_site' : ''
-  return `${basePath}/frames/ezgif-frame-${String(i).padStart(3, '0')}.jpg`
+  return `/tailor_site/frames/ezgif-frame-${String(i).padStart(3, '0')}.jpg`
 }
 
 export default function CinematicCanvas({ scrollProgress }) {

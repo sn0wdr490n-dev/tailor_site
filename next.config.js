@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH || undefined,
+  basePath: '/tailor_site',
   images: {
     unoptimized: true,
     domains: [],
