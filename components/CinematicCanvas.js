@@ -7,7 +7,9 @@ const INITIAL_LOAD = 15
 const PRELOAD_AHEAD = 8
 
 function getFrameUrl(i) {
-  return `/tailor_site/frames/ezgif-frame-${String(i).padStart(3, '0')}.jpg`
+  const isProd = process.env.NODE_ENV === 'production'
+  const base = isProd ? '/tailor_site' : ''
+  return `${base}/frames/ezgif-frame-${String(i).padStart(3, '0')}.jpg`
 }
 
 export default function CinematicCanvas({ scrollProgress }) {

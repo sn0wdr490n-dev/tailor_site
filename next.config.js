@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig = {
   output: 'export',
-  basePath: '/tailor_site',
+  basePath: isProd ? '/tailor_site' : undefined,
   images: {
     unoptimized: true,
     domains: [],
