@@ -7,7 +7,8 @@ const INITIAL_LOAD = 15
 const PRELOAD_AHEAD = 8
 
 function getFrameUrl(i) {
-  return `/tailor_site/frames/ezgif-frame-${String(i).padStart(3, '0')}.jpg`
+  const base = process.env.NEXT_PUBLIC_BASE_PATH || ''
+  return `${base}/frames/ezgif-frame-${String(i).padStart(3, '0')}.jpg`
 }
 
 export default function CinematicCanvas({ scrollProgress }) {
@@ -123,7 +124,7 @@ export default function CinematicCanvas({ scrollProgress }) {
     window.addEventListener('resize', resize)
 
     let lastFrameTime = 0
-    const TARGET_FPS = 30
+    const TARGET_FPS = 25
     const FRAME_INTERVAL = 1000 / TARGET_FPS
 
     const render = (timestamp) => {
