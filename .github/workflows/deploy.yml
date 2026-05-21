@@ -33,6 +33,13 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Add security headers
+        run: |
+          echo "Adding security headers to all HTML files..."
+          for file in $(find ./out -name "*.html"); do
+            sed -i 's|<head>|<head><meta http-equiv="X-Frame-Options" content="SAMEORIGIN"><meta http-equiv="X-Content-Type-Options" content="nosniff"><meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"><meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()"><meta http-equiv="Strict-Transport-Security" content="max-age=63072000; includeSubDomains; preload">|' "$file"
+          done
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
