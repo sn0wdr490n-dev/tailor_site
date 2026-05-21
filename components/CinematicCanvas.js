@@ -2,7 +2,7 @@
 
 import { useRef, useEffect, useState, useCallback } from 'react'
 
-const TOTAL_FRAMES = 130
+const TOTAL_FRAMES = 125
 const INITIAL_LOAD = 15
 const PRELOAD_AHEAD = 8
 
